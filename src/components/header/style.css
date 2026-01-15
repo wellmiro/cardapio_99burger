@@ -1,0 +1,37 @@
+.header{
+    position: sticky; /* faz o header flutuar */
+    top: 0;           
+    z-index: 1000;    
+    min-height: 50px;
+    background-color: #FFF;
+    border-bottom: 1px solid #E4E4E4;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.header img{
+    max-height: 35px;
+    margin-top: 5px;
+}
+
+.header .btn{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 1rem; /* tamanho padrão do texto */
+}
+
+/* RESPONSIVO: escondendo o logo e ajustando os botões em telas pequenas */
+@media (max-width: 576px) {
+    .header img {
+        display: none;
+    }
+
+    .header .btn {
+        font-size: 0.75rem; /* texto menor */
+        padding: 0.25rem 0.5rem; /* diminui o tamanho do botão */
+    }
+}
