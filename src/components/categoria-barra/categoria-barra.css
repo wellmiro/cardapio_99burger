@@ -1,0 +1,126 @@
+.cat-bar-wrapper {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+}
+
+.cat-bar {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 0 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.cat-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.cat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: 6px 12px;
+  min-width: 72px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.cat-item::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: width var(--transition);
+}
+
+.cat-item:hover {
+  background: var(--border-light);
+}
+
+.cat-active {
+  background: var(--primary-light);
+}
+
+.cat-active::after {
+  width: 24px;
+}
+
+.cat-active .cat-label {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.cat-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--border-light);
+  border: 2px solid transparent;
+  transition: border-color var(--transition);
+}
+
+.cat-active .cat-icon-wrap {
+  border-color: var(--primary);
+}
+
+.cat-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cat-icon-placeholder {
+  background: linear-gradient(135deg, var(--primary-light), #fde8e5);
+}
+
+.cat-icon-placeholder span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.cat-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  transition: color var(--transition);
+}
+
+@media (max-width: 480px) {
+  .cat-bar-wrapper {
+    padding: 8px 0;
+  }
+
+  .cat-item {
+    min-width: 64px;
+    padding: 4px 8px;
+  }
+
+  .cat-icon-wrap {
+    width: 46px;
+    height: 46px;
+  }
+
+  .cat-label {
+    font-size: 0.68rem;
+  }
+}
